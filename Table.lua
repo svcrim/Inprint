@@ -1,8 +1,7 @@
-script_key = ""
+script_key = "keyhere"
 
 getgenv().Inprint = {
 	["Combat"] = {
-		["Panic Mode"] = false,
 		["Triggerbot"] = {
 			["Enabled"] = true,
 			["Safety"]  = true,
@@ -19,9 +18,10 @@ getgenv().Inprint = {
 		["Camlock"] = {
 			["Enabled"] = true,
 			["FOV Size"] = 100,
+			["Mode"] = "Hold", -- ? "Hold, "Toggle" (why the fuck would anyone ever do this)
 			["Easing"] = {
 				["Style"] = "easeInSine", -- ? for documentation: https://easings.net
-				["Smoothness"] = 0.10,
+				["Smoothness"] = 0.12,
 					--[[ 
 					!! CASE SENSITIVE !!
 
@@ -55,12 +55,12 @@ getgenv().Inprint = {
 				["[Double-Barrel SG]"] = {
 					["Enabled"] = true,
 					-- TODO: Add ["MODE"], make it so the bullets can go towards the current target or just edit the spread normally
-					["Multiplier"] = 0.3,
+					["Multiplier"] = 0.2,
 				},
 				["[TacticalShotgun]"] = {
 					["Enabled"] = true,
 					-- TODO: Add ["MODE"]
-					["Multiplier"] = 0.4,
+					["Multiplier"] = 0.2,
 				},
 				["[Shotgun]"] = {
 					["Enabled"] = true,
@@ -74,8 +74,8 @@ getgenv().Inprint = {
 				}
 			},
 			["Hitbox Expander"] = {
-				["Enabled"] = false,
-				["Mode"] = "Target", -- ? "Target", "All"
+				["Enabled"] = true,
+				["Mode"] = "CamTarget", -- ? "CamTarget", "TBTarget", "All"
 				["Multiplier"] = {
 					["X"] = 0.9,
 					["Y"] = 1,
@@ -89,6 +89,7 @@ getgenv().Inprint = {
 			["Knocked Check"] = true,
 			["Grabbed Check"] = true,
 			["Wall Check"] = true,
+			["Weapon Check"] = true, -- ! Added
 		}
 	},
 
@@ -99,10 +100,10 @@ getgenv().Inprint = {
 			["Sides"] = 64,
 			["Thickness"] = 0.25,
 			["Transparency"] = 0.5,
-			["Color"] = Color3.new(1, 0, 0)
+			["FOV Color"] = Color3.new(1, 0, 0)
 		},
 		["Hitbox Expander"] = {
-			["Enabled"] = true,
+			["Enabled"] = false,
 			["Fill"] = {
 				["Fill Color"] = Color3.new(1, 0, 0),
 				["Fill Transparency"] = 0.9,
@@ -134,7 +135,7 @@ getgenv().Inprint = {
 	},
 
 	["Macro"] = {
-		["Enabled"] = false,
+		["Enabled"] = true,
 		["Anti Fling"] = true,
 		["DisableSeats"] = true, -- ! This turns seats off while you're macroing
 		["Mode"] = "Hold" -- ? "Hold", "Toggle"
@@ -143,15 +144,15 @@ getgenv().Inprint = {
 	["Binds"] = {
 		["Triggerbot Toggle"] = Enum.KeyCode.J,
 		["Triggerbot Target"] = Enum.KeyCode.P,
-		["Camlock Toggle"] = Enum.KeyCode.T,
+		["Camlock Toggle"] = Enum.KeyCode.J,
 		["Camlock Target"] = Enum.KeyCode.C,
 		["Hide Visuals"] = Enum.KeyCode.L,
 		["Hitbox Expander"] = Enum.KeyCode.Z,
 		["Spread Modifier"] = Enum.KeyCode.H,
-		["Panic Mode"] = Enum.KeyCode.Z,
-		["Macro"] = Enum.KeyCode.X
+		["Macro"] = Enum.KeyCode.X,
 	}
 
 }
 
 loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/c9fc08a4bb34d9173de7ee532dadb612.lua"))()
+
