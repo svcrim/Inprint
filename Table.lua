@@ -67,7 +67,7 @@ getgenv().Inprint = {
 					-- TODO: Add ["MODE"]
 					["Multiplier"] = 0.2,
 				},
-				["[DrumShotgun]"] = {
+				["[Drum-Shotgun]"] = {
 					["Enabled"] = true,
 					-- TODO: Add ["MODE"]
 					["Multiplier"] = 0.2,
