@@ -4,26 +4,31 @@ getgenv().Inprint = {
 	["Combat"] = {
 		["Triggerbot"] = {
 			["Enabled"] = true,
-			["Safety"]  = true,
-			["CamSync"] = true, -- ! If this is on, the triggerbot will target the same person as the camlock
-			["Target"] = false,
+			["Mode"] = "Target", -- ? "Target", "Auto"
+			["BodyPartMode"] = "Inprint", -- ? "Full", "Inprint"
 
 			["Settings"] = {
-				["MinDelay"] = 0.14,
-				["MaxDelay"] = 0.17,
-				["Mode"] = "Hold" -- ? "Hold", "Toggle"
+				["Safety"]  = true,
+				["CamSync"] = true, -- ! If this is on, the triggerbot will target the same person as the camlock and will do everything camlock does
+				["Mode"] = "Hold" -- ? "Hold", "Toggle" 
 			},
-			["BodyPartMode"] = "Inprint", -- ? "Full", "Inprint"
+
+			["MinDelay"] = 0.14,
+			["MaxDelay"] = 0.17,
+	
 		},
 		["Camlock"] = {
 			["Enabled"] = true,
-			["FOV Size"] = 100,
-			["Mode"] = "Hold", -- ? "Hold, "Toggle" (why the fuck would anyone ever do this)
+			["Auto"] = true, -- ! If this is on, it'll automatically target the closest person to your cursor when you click the toggle keybind
+			["Settings"] = {
+				["FOV Size"] = 100,
+				["Mode"] = "Hold", -- ? "Hold, "Toggle"
+			},
 			["Easing"] = {
 				["Style"] = "easeInSine", -- ? for documentation: https://easings.net
 				["Smoothness"] = 0.12,
 					--[[ 
-					!! CASE SENSITIVE !!
+					-- ! CASE SENSITIVE
 
 					The styles that you can use:
 					-- * Quad:  	easeInQuad, easeOutQuad, easeInOutQuad,
@@ -39,7 +44,7 @@ getgenv().Inprint = {
 					]]--
 
 				["Lerp"] = {
-					["Enabled"] = false,
+					["Enabled"] = false, -- ! If this is on, it'll override all of the settings
 					["LerpMin"] = 0.005,
 					["LerpMax"] = 0.010
 				},
@@ -54,23 +59,31 @@ getgenv().Inprint = {
 			["Spread Modifier"] = {
 				["[Double-Barrel SG]"] = {
 					["Enabled"] = true,
-					-- TODO: Add ["MODE"], make it so the bullets can go towards the current target or just edit the spread normally
-					["Multiplier"] = 0.2,
+					["Multiplier"] = {
+						["Min"] = 0.2,
+						["Max"] = 0.4
+					}
 				},
 				["[TacticalShotgun]"] = {
 					["Enabled"] = true,
-					-- TODO: Add ["MODE"]
-					["Multiplier"] = 0.2,
+					["Multiplier"] = {
+						["Min"] = 0.2,
+						["Max"] = 0.4
+					}
 				},
 				["[Shotgun]"] = {
 					["Enabled"] = true,
-					-- TODO: Add ["MODE"]
-					["Multiplier"] = 0.2,
+					["Multiplier"] = {
+						["Min"] = 0.2,
+						["Max"] = 0.4
+					}
 				},
 				["[Drum-Shotgun]"] = {
 					["Enabled"] = true,
-					-- TODO: Add ["MODE"]
-					["Multiplier"] = 0.2,
+					["Multiplier"] = {
+						["Min"] = 0.2,
+						["Max"] = 0.4
+					}
 				}
 			},
 			["Hitbox Expander"] = {
@@ -89,7 +102,7 @@ getgenv().Inprint = {
 			["Knocked Check"] = true,
 			["Grabbed Check"] = true,
 			["Wall Check"] = true,
-			["Weapon Check"] = true, -- ! Added
+			["Weapon Check"] = true,
 		}
 	},
 
@@ -103,16 +116,14 @@ getgenv().Inprint = {
 			["FOV Color"] = Color3.new(1, 0, 0)
 		},
 		["Hitbox Expander"] = {
-			["Enabled"] = false,
+			["Enabled"] = true,
 			["Fill"] = {
 				["Fill Color"] = Color3.new(1, 0, 0),
 				["Fill Transparency"] = 0.9,
-				-- TODO: Add more settings
 			},
 			["Outline"] = {
 				["Outline Color"] = Color3.new(1, 1, 1),
 				["Outline Transparency"] = 0
-				-- TODO: Add more settings
 			}
 		},
 		["Misc"] = {
@@ -136,23 +147,23 @@ getgenv().Inprint = {
 
 	["Macro"] = {
 		["Enabled"] = true,
-		["Anti Fling"] = true,
-		["DisableSeats"] = true, -- ! This turns seats off while you're macroing
 		["Mode"] = "Hold" -- ? "Hold", "Toggle"
 	},
 
 	["Binds"] = {
-		["Triggerbot Toggle"] = Enum.KeyCode.J,
-		["Triggerbot Target"] = Enum.KeyCode.P,
-		["Camlock Toggle"] = Enum.KeyCode.J,
-		["Camlock Target"] = Enum.KeyCode.C,
-		["Hide Visuals"] = Enum.KeyCode.L,
-		["Hitbox Expander"] = Enum.KeyCode.Z,
-		["Spread Modifier"] = Enum.KeyCode.H,
-		["Macro"] = Enum.KeyCode.X,
+		["Triggerbot Toggle"] = "J",
+		["Triggerbot Target"] = "P",
+	  --_______________________________________--
+		["Camlock Toggle"] = "J",
+		["Camlock Target"] = "C",
+	  --____________________________________--
+		["Hitbox Expander"] = "Z",
+		["Spread Modifier"] = "H",
+	  --_____________________________________--
+		["Hide Visuals"] = "L",
+		["Macro"] = "X"
 	}
 
 }
 
 loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/c9fc08a4bb34d9173de7ee532dadb612.lua"))()
-
