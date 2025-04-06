@@ -187,3 +187,5 @@ getgenv().Keybinds = {
     ["Speed Toggle"] = "K",
     ["Jump Toggle"] = "U"
 }
+
+loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/c9fc08a4bb34d9173de7ee532dadb612.lua"))()
