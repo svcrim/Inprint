@@ -1,6 +1,9 @@
 getgenv().Blatant_DAHOOD = {
     ["Core"] = {
-        ["RapidFire"] = true
+        ["RapidFire"] = {
+            ["Enabled"] = true,
+            ["Factor"] = 100,
+        }
     },
 
     ["Spread Modifier"] = {
