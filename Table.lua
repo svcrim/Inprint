@@ -21,7 +21,6 @@ getgenv().Triggerbot = {
 
 getgenv().SilentAim = {
     ["Enabled"] = true,
-    ["Anti Curve"] = true,
     ["Prediction"] = 0, -- ? Keep it on 0 for normal DH
     ["Settings"] = {
         ["FOV Size"] = 100,
