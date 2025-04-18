@@ -1,4 +1,4 @@
-script_key = ""
+script_key=""
 
 getgenv().Inprint = {
     ["Intro"] = true,
@@ -11,40 +11,37 @@ getgenv().Inprint = {
 
 getgenv().Triggerbot = {
     ["Enabled"] = true,
-    ["Settings"] = {
-        ["Target"] = true,
-        ["Mode"] = "Hold" -- ? Hold, Toggle
-    },
-    ["MinDelay"] = 0.14,
-    ["MaxDelay"] = 0.17
+    ["Target"] = true,
+    ["Box Sync"] = true,
+    ["Mode"] = "Toggle", -- ? Hold, Toggle
+    ["MinDelay"] = 0.03,
+    ["MaxDelay"] = 0.07,
 }
 
 getgenv().SilentAim = {
     ["Enabled"] = true,
     ["Prediction"] = 0, -- ? Keep it on 0 for normal DH
-    ["Settings"] = {
-        ["FOV Size"] = 100,
-        ["Mode"] = "Target", -- ? Target, Regular
-        ["BodyPartMode"] = "Full", -- ? Full, Partial
-        ["OverrideYAxis"] = "Full" -- ? Full, Partial
-    }
+    ["FOV Size"] = 100,
+    ["Mode"] = "Target", -- ? Target, Regular
+    ["BodyPartMode"] = "Full", -- ? Full, Partial
+    ["OverrideYAxis"] = "Full", -- ? Full, Partial
+    ["FOV Mode"] = "BoxFOV" -- ? Legit, Unlegit, BoxFOV
 }
 
 getgenv().Aimbot = {
     ["Enabled"] = true,
     ["Auto"] = true,
     ["Prediction"] = 0,
-    ["Settings"] = {
-        ["FOV Size"] = 100,
-        ["Mode"] = "Hold" -- ? Hold, Toggle
-    },
+    ["FOV Size"] = 200,
+    ["Mode"] = "Hold", -- ? Hold, Toggle
+
     ["Easing"] = {
         ["Style"] = "easeInSine", -- ? All easing styles: https://easings.net
         ["Smoothness"] = 0.12,
         ["Lerp"] = {
-            ["Enabled"] = false,
-            ["LerpMin"] = 0.005,
-            ["LerpMax"] = 0.010
+            ["Enabled"] = true,
+            ["LerpMin"] = 0.027,
+            ["LerpMax"] = 0.032
         },
         ["UseCustom"] = false,
         ["Custom"] = function(t)
@@ -54,60 +51,49 @@ getgenv().Aimbot = {
 }
 
 getgenv().Blatant = {
-
-    ["Hood Customs"] = {
-        ["Forcehit"] = false,
-    },
-
-    ["RapidFire"] = {
-        ["Enabled"] = true,
-        ["Factor"] = 100,
-    },
-
     ["Spread Modifier"] = {
         ["[Double-Barrel SG]"] = {
             ["Enabled"] = true,
             ["Multiplier"] = {
-                ["Min"] = 0.2,
+                ["Min"] = 0.4,
                 ["Max"] = 0.4
             }
         },
         ["[TacticalShotgun]"] = {
             ["Enabled"] = true,
             ["Multiplier"] = {
-                ["Min"] = 0.2,
+                ["Min"] = 0.4,
                 ["Max"] = 0.4
             }
         },
         ["[Shotgun]"] = {
             ["Enabled"] = true,
             ["Multiplier"] = {
-                ["Min"] = 0.2,
+                ["Min"] = 0.4,
                 ["Max"] = 0.4
             }
         },
         ["[Drum-Shotgun]"] = {
             ["Enabled"] = true,
             ["Multiplier"] = {
-                ["Min"] = 0.2,
+                ["Min"] = 0.4,
                 ["Max"] = 0.4
             }
         }
     },
 
     ["Hitbox Expander"] = {
-        ["Enabled"] = true,
-        ["Mode"] = "Target", -- ? Target, All
+        ["Enabled"] = false,
         ["Multiplier"] = {
-            ["X"] = 0.9,
+            ["X"] = 1,
             ["Y"] = 1,
-            ["Z"] = 0.5
+            ["Z"] = 1
         }
     }
 }
 
 getgenv().Safety = {
-    ["Friend Check"] = true,
+    ["Friend Check"] = false,
     ["Crew Check"] = true,
     ["Knocked Check"] = true,
     ["Grabbed Check"] = true,
@@ -117,7 +103,6 @@ getgenv().Safety = {
 
 getgenv().Visuals = {
     ["Aimbot FOV"] = {
-        ["Enabled"] = true,
         ["Filled"] = false,
         ["Sides"] = 64,
         ["Thickness"] = 0.25,
@@ -125,15 +110,18 @@ getgenv().Visuals = {
         ["FOV Color"] = Color3.new(1, 0, 0)
     },
     ["Silent FOV"] = {
-        ["Enabled"] = true,
         ["Filled"] = false,
         ["Sides"] = 64,
         ["Thickness"] = 0.25,
         ["Transparency"] = 0.5,
-        ["FOV Color"] = Color3.new(1, 0, 0)
+        ["FOV Color"] = Color3.new(1, 0, 0),
+        ["Box FOV"] = {
+            ["Width"] = 2.5,
+            ["Height"] = 5
+        }
     },
     ["Hitbox Expander"] = {
-        ["Enabled"] = true,
+        ["Enabled"] = false,
         ["Fill"] = {
             ["Fill Color"] = Color3.new(1, 0, 0),
             ["Fill Transparency"] = 0.9
@@ -156,29 +144,29 @@ getgenv().Visuals = {
 
 getgenv().Movement = {
     ["WalkSpeed"] = {
-        ["Enabled"] = true,
+        ["Enabled"] = false,
         ["Speed"] = 100
     },
     ["Jump Power"] = {
-        ["Enabled"] = true,
+        ["Enabled"] = false,
         ["Power"] = 25
     },
     ["NoJumpCoolDown"] = {
-        ["Enabled"] = true
+        ["Enabled"] = false
     }
 }
 
 getgenv().Macro = {
-    ["Enabled"] = true,
+    ["Enabled"] = false,
     ["Mode"] = "Hold" -- ? Hold, Toggle
 }
 
 getgenv().Keybinds = {
-    ["Lockon"] = "C",
+    ["Lockon"] = "M",
     ["Unlock"] = "Z",
-    ["Triggerbot Toggle"] = "J",
+    ["Triggerbot Toggle"] = "L",
     ["Silent Aim Toggle"] = "B",
-    ["Aimbot Toggle"] = "J",
+    ["Aimbot Toggle"] = "P",
     ["Hitbox Expander"] = "Z",
     ["Spread Modifier"] = "H",
     ["Hide Visuals"] = "L",
