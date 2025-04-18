@@ -103,17 +103,15 @@ getgenv().Safety = {
 
 getgenv().Visuals = {
     ["Aimbot FOV"] = {
-        ["Filled"] = false,
-        ["Sides"] = 64,
+        ["Visible"] = false,
         ["Thickness"] = 0.25,
-        ["Transparency"] = 0.5,
+        ["Transparency"] = 1,
         ["FOV Color"] = Color3.new(1, 0, 0)
     },
     ["Silent FOV"] = {
-        ["Filled"] = false,
-        ["Sides"] = 64,
+        ["Visible"] = false,
         ["Thickness"] = 0.25,
-        ["Transparency"] = 0.5,
+        ["Transparency"] = 1,
         ["FOV Color"] = Color3.new(1, 0, 0),
         ["Box FOV"] = {
             ["Width"] = 2.5,
