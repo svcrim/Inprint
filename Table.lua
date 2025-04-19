@@ -3,6 +3,7 @@ script_key=""
 getgenv().Inprint = {
     ["Intro"] = true,
     ["Panic"] = false,
+    ["Auto Target"] = true,
     ["FPS"] = {
         ["Unlock FPS"] = true,
         ["FPS Cap"] = 999
@@ -30,7 +31,6 @@ getgenv().SilentAim = {
 
 getgenv().Aimbot = {
     ["Enabled"] = true,
-    ["Auto"] = true,
     ["Prediction"] = 0,
     ["FOV Size"] = 200,
     ["Mode"] = "Hold", -- ? Hold, Toggle
